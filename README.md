@@ -1,13 +1,10 @@
 ### oscp_recon
 OSCP recon tools
 
-Original script from https://www.securitysift.com/offsec-pwb-oscp/
-##Original Script Details##
+Original script
+https://www.securitysift.com/offsec-pwb-oscp/
 [Title]: reconscan.py -- a recon/enumeration script
 [Author]: Mike Czumak (T_v3rn1x) -- @SecuritySift
-
-
-
 
 ##changelog##
 
