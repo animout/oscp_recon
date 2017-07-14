@@ -93,7 +93,7 @@ def dnsEnum(ip_address, port): #dnsEnumeration script
 def httpEnum(ip_address, port):
     print "INFO: Detected http on {0}:{1}".format(ip_address,port)
     print "INFO: Performing nmap web script and dirb with common wordlist and NIKTO scan for {0}:{1} ".format(ip_address,port)
-    HTTPSCAN = "nmap -sV -Pn -vv -p {0} --script=http-vhosts,http-userdir-enum,http-apache-negotiation,http-backup-finder,http-config-backup,http-default-accounts,http-methods,http-method-tamper,http-passwd,http-robots.txt -oN {1}/enumeration/{1}_http_nse.txt {1}".format(port, ip_address)
+    HTTPSCAN = "nmap -sV -Pn -vv -p {0} --script=http-vhosts,http-userdir-enum,http-apache-negotiation,http-backup-finder,http-config-backup,http-default-accounts,http-methods,http-method-tamper,http-passwd,http-robots.txt -oN {1}/enumeration/{1}_{0}_http_nse.txt {1}".format(port, ip_address)
     results = subprocess.check_output(HTTPSCAN, shell=True)
     #dirb with default wordlist (common)
     DIRBUST = "dirb http://{0}:{1} -r -o {0}/enumeration/{0}_{1}_dirb_http.txt".format(ip_address, port) #don't enter any folders
@@ -107,7 +107,7 @@ def httpEnum(ip_address, port):
 def httpsEnum(ip_address, port):
     print "INFO: Detected https on {0}:{1}".format(ip_address,port)
     print "INFO: Performing nmap web script and dirb with common wordlist and NIKTO scan for {0}:{1} ".format(ip_address,port)
-    HTTPSCAN = "nmap -sV -Pn -vv -p {0} --script=http-vhosts,http-userdir-enum,http-apache-negotiation,http-backup-finder,http-config-backup,http-default-accounts,http-methods,http-method-tamper,http-passwd,http-robots.txt -oN {1}/enumeration/{1}_http_nse.txt {1}".format(port, ip_address)
+    HTTPSCAN = "nmap -sV -Pn -vv -p {0} --script=http-vhosts,http-userdir-enum,http-apache-negotiation,http-backup-finder,http-config-backup,http-default-accounts,http-methods,http-method-tamper,http-passwd,http-robots.txt -oN {1}/enumeration/{1}_{0}_http_nse.txt {1}".format(port, ip_address)
     results = subprocess.check_output(HTTPSCAN, shell=True)
     #dirb with default wordlist (common)
     DIRBUST = "dirb https://{0}:{1} -r -o {0}/enumeration/{0}_{1}_dirb_https.txt".format(ip_address, port) #don't enter any folders
