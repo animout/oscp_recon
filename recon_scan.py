@@ -161,10 +161,10 @@ def ftpEnum(ip_address, port):
     print "INFO: Detected ftp on {0}:{1}".format(ip_address,port)
     FTPSCAN = "nmap -sV -Pn -vv -p {0} --script=ftp-anon,ftp-bounce,ftp-libopie,ftp-proftpd-backdoor,ftp-vsftpd-backdoor,ftp-vuln-cve2010-4221 -oN {1}/enumeration/{1}_ftp_nse.txt {1}".format(port, ip_address)
     results = subprocess.check_output(FTPSCAN, shell=True)
-    outfile = "{0}/enumeration/{0}_ftprecon.txt".format(ip_address)
-    f = open(outfile, "w")
-    f.write(results)
-    f.close
+    #outfile = "{0}/enumeration/{0}_ftprecon.txt".format(ip_address)
+    #f = open(outfile, "w")
+    #f.write(results)
+    #f.close
     return
 
 
